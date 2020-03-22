@@ -1,0 +1,40 @@
+{
+  "project_info": {
+    "project_number": "207040928357",
+    "firebase_url": "https://datesomedating.firebaseio.com",
+    "project_id": "datesomedating",
+    "storage_bucket": "datesomedating.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:207040928357:android:fb6db18dfa01239021448c",
+        "android_client_info": {
+          "package_name": "com.blackwizard.datesome"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "207040928357-dtkufa6i92id1vm951m7th1hud9c99vm.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyA-CGZ2ki8gFe_uM7Gt4gIWLg0acmHpu54"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "207040928357-dtkufa6i92id1vm951m7th1hud9c99vm.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

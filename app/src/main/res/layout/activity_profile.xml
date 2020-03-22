@@ -1,0 +1,178 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@android:color/holo_red_light"
+    tools:context=".Profile">
+
+    <ImageView
+        android:id="@+id/prof"
+        android:layout_width="120dp"
+        android:layout_height="120dp"
+        android:src="@drawable/profile"
+        android:layout_centerHorizontal="true" />
+
+    <TextView
+        android:id="@+id/username"
+        android:layout_width="120dp"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/prof"
+        android:layout_centerHorizontal="true"
+        android:text="Black Wizard"
+        android:textColor="@android:color/black"
+        android:layout_marginTop="10dp"
+        android:textSize="18sp"
+        android:textStyle="bold"/>
+    
+    <LinearLayout
+        android:id="@+id/l1"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_marginTop="10dp"
+        android:layout_below="@id/username">
+
+    <ImageView
+        android:id="@+id/profile"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:layout_below="@id/profile"
+        android:layout_marginTop="30dp"
+        android:src="@drawable/profile"
+        android:layout_marginLeft="70dp" />
+
+        <TextView
+            android:id="@+id/MyProfile"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="My Profile"
+            android:layout_marginLeft="20dp"
+            android:textSize="18sp"
+            android:textColor="@android:color/black"
+            android:textStyle="bold"
+            android:layout_marginTop="50dp"/>
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/l2"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_marginTop="10dp"
+        android:layout_below="@id/l1">
+
+        <ImageView
+            android:id="@+id/messages"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:layout_below="@id/profile"
+            android:layout_marginTop="30dp"
+            android:src="@drawable/message"
+            android:layout_marginLeft="70dp" />
+
+        <TextView
+            android:id="@+id/MyMessages"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="My Messages"
+            android:layout_marginLeft="20dp"
+            android:textSize="18sp"
+            android:textColor="@android:color/black"
+            android:textStyle="bold"
+            android:layout_marginTop="50dp"/>
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/l3"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_marginTop="10dp"
+        android:layout_below="@id/l2">
+
+        <ImageView
+            android:id="@+id/location"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:layout_below="@id/profile"
+            android:layout_marginTop="30dp"
+            android:src="@drawable/location"
+            android:layout_marginLeft="70dp"
+            />
+        <TextView
+            android:id="@+id/myLocation"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="My Location"
+            android:layout_marginLeft="20dp"
+            android:textSize="18sp"
+            android:textColor="@android:color/black"
+            android:textStyle="bold"
+            android:layout_marginTop="50dp"/>
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/l4"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_marginTop="10dp"
+        android:layout_below="@id/l3">
+
+        <ImageView
+            android:id="@+id/setting"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:layout_below="@id/profile"
+            android:layout_marginTop="30dp"
+            android:src="@drawable/settings"
+            android:layout_marginLeft="70dp" />
+        <TextView
+            android:id="@+id/MySettings"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/my_settings"
+            android:layout_marginLeft="20dp"
+            android:textSize="18sp"
+            android:textColor="@android:color/black"
+            android:textStyle="bold"
+            android:layout_marginTop="50dp" />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/l5"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_below="@id/l4"
+        android:layout_alignParentBottom="true"
+        android:layout_marginBottom="10dp"
+        android:gravity="center">
+
+        <ImageView
+            android:id="@+id/logout"
+            android:layout_width="80dp"
+            android:layout_height="80dp"
+            android:layout_below="@id/profile"
+            android:layout_marginTop="10dp"
+            android:src="@drawable/logout1"
+            android:layout_marginLeft="50dp" />
+
+        <TextView
+            android:id="@+id/myLogout"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/logout"
+            android:layout_marginLeft="20dp"
+            android:textSize="18sp"
+            android:textColor="@android:color/black"
+            android:textStyle="bold"
+            android:layout_marginTop="10dp"/>
+    </LinearLayout>
+
+</RelativeLayout>

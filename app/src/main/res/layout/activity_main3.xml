@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:orientation="vertical"
+    android:layout_height="match_parent">
+
+    <TextView
+        android:id="@+id/dob"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Date of Birth"
+        android:textColor="@android:color/black"
+        android:textStyle="bold"
+        android:paddingLeft="50dp"
+        android:layout_marginTop="20dp"/>
+
+    <DatePicker
+        android:id="@+id/datePicker"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/dob"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="20dp"
+        android:layout_marginBottom="10dp" />
+
+    <TextView
+        android:id="@+id/hobbies"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:layout_below="@+id/datePicker"
+        android:paddingLeft="50dp"
+        android:textColor="@android:color/black"
+        android:textStyle="bold"
+        android:text="Hobbies"/>
+
+    <CheckBox
+        android:id="@+id/sports"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:onClick="onCheckboxClicked"
+        android:layout_below="@id/hobbies"
+        android:checked="true"
+        android:text="sports" />
+
+    <CheckBox
+        android:id="@+id/travel"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="travel"
+        android:checked="true"
+        android:onClick="onCheckboxClicked"
+        android:layout_below="@id/sports"/>
+
+    <CheckBox
+        android:id="@+id/swimming"
+        android:checked="true"
+        android:onClick="onCheckboxClicked"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/travel"
+        android:text="Swimming" />
+
+    <Button
+        android:id="@+id/finish"
+        style="?android:buttonBarButtonStyle"
+        android:layout_width="400dp"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:text="Finish"
+        android:layout_below="@+id/swimming"/>
+
+</RelativeLayout>
