@@ -23,6 +23,7 @@ public class MainActivity extends AppCompatActivity{
     private EditText inputEmail, inputPassword;
     private ProgressBar progressBar;
     private FirebaseAuth auth;
+   // private FirebaseAuth.AuthStateListener firebaseStateListener;
 
     @Override
     protected void onCreate(Bundle SavedInstanceState) {
@@ -95,7 +96,11 @@ public class MainActivity extends AppCompatActivity{
                                 }
                             }
                         });
+
             }
         });
+
     }
+
+
 }

@@ -9,41 +9,65 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ProgressBar;
+import android.widget.RadioButton;
+import android.widget.RadioGroup;
 import android.widget.Toast;
 
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.auth.FirebaseUser;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
 
 public class Main2Activity extends AppCompatActivity {
 
     private EditText Email;
     private EditText Username;
     private EditText Password;
-    private Button Next;
+    private Button Register;
     private FirebaseAuth auth;
+   // private FirebaseAuth.AuthStateListener firebaseAuthStateListener; //to also be removed
     private ProgressBar progressBar;
+    private RadioGroup radioGroup;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main2);
 
-        Email = findViewById(R.id.email);
-        Username = findViewById(R.id.username);
-        Password = findViewById(R.id.password);
-        Next = findViewById(R.id.btn_next);
-        progressBar = findViewById(R.id.progressBar);
-
         auth = FirebaseAuth.getInstance();
 
-        Next.setOnClickListener(new View.OnClickListener() {
+        Email = findViewById(R.id.email);
+        Username = findViewById(R.id.name);
+        Password = findViewById(R.id.password);
+        Register = findViewById(R.id.btn_register);
+        progressBar = findViewById(R.id.progressBar);
+        radioGroup = findViewById(R.id.radioGroup);
+
+        Register.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
 
-                String email = Email.getText().toString().trim();
-                String password = Password.getText().toString().trim();
+                //code to handle radioGroup
+                int selectId = radioGroup.getCheckedRadioButtonId();
+                final RadioButton radioButton = findViewById(selectId);
+                if (radioButton.getText() == null){
+                    return;
+                }
+
+                final String email = Email.getText().toString().trim();
+                final String password = Password.getText().toString().trim();
+                final String name = Username.getText().toString();
+
+                final FirebaseUser user = FirebaseAuth.getInstance().getCurrentUser();
+                if (user != null){
+                    Intent intent = new Intent(Main2Activity.this, Main3Activity.class);
+                    startActivity(intent);
+                    finish();
+                    return;
+                }
 
                 if (TextUtils.isEmpty(email)) {
                     Toast.makeText(getApplicationContext(), "Enter email address!", Toast.LENGTH_SHORT).show();
@@ -61,6 +85,7 @@ public class Main2Activity extends AppCompatActivity {
                 }
 
                 progressBar.setVisibility(View.VISIBLE);
+
                 //create user
                 auth.createUserWithEmailAndPassword(email, password)
                         .addOnCompleteListener(Main2Activity.this, new OnCompleteListener<AuthResult>() {
@@ -75,8 +100,9 @@ public class Main2Activity extends AppCompatActivity {
                                     Toast.makeText(Main2Activity.this, "Authentication failed." + task.getException(),
                                             Toast.LENGTH_SHORT).show();
                                 } else {
-                                    startActivity(new Intent(Main2Activity.this, Main3Activity.class));
-                                    finish();
+                                    String userId = auth.getCurrentUser().getUid();
+                                    DatabaseReference currentUserDB = FirebaseDatabase.getInstance().getReference().child("Users").child(radioButton.getText().toString()).child(userId).child("name");
+                                    currentUserDB.setValue(name);
                                 }
                             }
                         });
