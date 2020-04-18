@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="wrap_content">
@@ -19,19 +19,21 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_centerHorizontal="true"
-                android:text="Hey, lets get started!!!"
+                android:text="@string/hey_lets_get_started"
                 android:textColor="#747474"
                 android:textSize="24sp"
                 android:textStyle="bold"
                 android:layout_below="@+id/logo"
                 android:gravity="center"
-                android:layout_marginTop="10dp"/>
+                style="@android:style/Widget.Material.Button.Borderless.Colored"
+                android:layout_marginTop="10dp"
+                tools:targetApi="lollipop"/>
 
             <EditText
                 android:id="@+id/email"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:hint="Enter Your Email"
+                android:hint="@string/enter_your_email"
                 android:inputType="textEmailAddress"
                 android:padding="15dp"
                 android:layout_marginTop="10dp"
@@ -41,7 +43,7 @@
                 android:id="@+id/name"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:hint="Enter Your Name "
+                android:hint="@string/enter_your_name"
                 android:inputType="textEmailAddress"
                 android:padding="15dp"
                 android:layout_marginTop="10dp"
@@ -51,7 +53,7 @@
                 android:id="@+id/password"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:hint="Enter Your Password"
+                android:hint="@string/enter_your_password"
                 android:inputType="textPassword"
                 android:padding="15dp"
                 android:layout_marginTop="10dp"
@@ -66,25 +68,26 @@
                 android:orientation="horizontal"
                 android:paddingRight="50dp"
                 android:layout_marginTop="10dp"
-                android:id="@+id/radioGroup">
+                android:id="@+id/radioGroup"
+                android:paddingEnd="50dp">
 
                 <RadioButton
                     android:layout_width="wrap_content"
                     android:layout_height="55dp"
-                    android:text="Male"
+                    android:text="@string/male"
                     android:id="@+id/radioButton"
                     android:padding="15dp"
                     android:checked="false"
-                    android:textSize="20dp" />
+                    android:textSize="20sp" />
 
                 <RadioButton
                     android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="Female"
+                    android:layout_height="55dp"
+                    android:text="@string/female"
                     android:id="@+id/radioButton2"
                     android:padding="15dp"
                     android:checked="false"
-                    android:textSize="20dp" />
+                    android:textSize="20sp" />
             </RadioGroup>
 
         <androidx.appcompat.widget.AppCompatButton
@@ -93,7 +96,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:padding="12dp"
-            android:text="Register"
+            android:text="@string/register"
             tools:targetApi="lollipop"
             android:layout_below="@id/radioGroup"/>
 

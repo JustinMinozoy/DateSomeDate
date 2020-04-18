@@ -21,4 +21,13 @@
     <string name="login_failed">"Login failed"</string>
     <string name="welcome_to_home_navigation">Welcome to Home Navigation</string>
     <string name="title_activity_main4">Main4Activity</string>
+    <string name="signout">SignOut</string>
+    <string name="enter_your_email">Enter Your Email</string>
+    <string name="enter_your_name">Enter Your Name</string>
+    <string name="enter_your_password">Enter Your Password</string>
+    <string name="hey_lets_get_started">Hey, lets get started!!!</string>
+    <string name="register">Register</string>
+    <string name="female">Female</string>
+    <string name="male">Male</string>
+    <string name="todo">TODO</string>
 </resources>

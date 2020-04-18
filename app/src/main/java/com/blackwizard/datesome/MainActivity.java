@@ -19,11 +19,11 @@ import com.google.firebase.auth.FirebaseAuth;
 public class MainActivity extends AppCompatActivity{
 
     private Button SignUp;
-    private Button Login, Test;
+    private Button Login;
     private EditText inputEmail, inputPassword;
     private ProgressBar progressBar;
     private FirebaseAuth auth;
-   // private FirebaseAuth.AuthStateListener firebaseStateListener;
+   private FirebaseAuth.AuthStateListener firebaseStateListener;
 
     @Override
     protected void onCreate(Bundle SavedInstanceState) {
@@ -35,7 +35,6 @@ public class MainActivity extends AppCompatActivity{
         inputEmail = findViewById(R.id.email);
         inputPassword = findViewById(R.id.password);
         progressBar = findViewById(R.id.progressBar);
-        Test = findViewById(R.id.t);
 
         auth = FirebaseAuth.getInstance();
 
@@ -43,14 +42,6 @@ public class MainActivity extends AppCompatActivity{
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent(MainActivity.this, Main2Activity.class);
-                startActivity(intent);
-            }
-        });
-
-        Test.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent intent = new Intent(MainActivity.this, Main4Activity.class);
                 startActivity(intent);
             }
         });
@@ -101,6 +92,5 @@ public class MainActivity extends AppCompatActivity{
         });
 
     }
-
 
 }

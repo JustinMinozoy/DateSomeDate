@@ -32,7 +32,8 @@
         android:hint="Enter your email"
         android:inputType="textEmailAddress"
         android:padding="15dp"
-        android:drawableLeft="@drawable/email"/>
+        android:drawableLeft="@drawable/email"
+        android:importantForAutofill="no" />
 
     <EditText
         android:id="@+id/password"
@@ -42,7 +43,8 @@
         android:hint="Enter your password"
         android:inputType="textPassword"
         android:padding="15dp"
-        android:drawableLeft="@drawable/password"/>
+        android:drawableLeft="@drawable/password"
+        android:autofillHints="" />
 
     <LinearLayout
         android:id="@+id/l1"
@@ -70,13 +72,6 @@
 
 
     </LinearLayout>
-
-    <Button
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:id="@+id/t"
-        android:layout_marginTop="600dp"
-        android:text="test"/>
 
     <ProgressBar
         android:id="@+id/progressBar"

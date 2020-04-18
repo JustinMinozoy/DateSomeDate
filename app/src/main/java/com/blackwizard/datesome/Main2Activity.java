@@ -28,7 +28,7 @@ public class Main2Activity extends AppCompatActivity {
     private EditText Password;
     private Button Register;
     private FirebaseAuth auth;
-   // private FirebaseAuth.AuthStateListener firebaseAuthStateListener; //to also be removed
+   private FirebaseAuth.AuthStateListener firebaseAuthStateListener; //to also be removed
     private ProgressBar progressBar;
     private RadioGroup radioGroup;
 
@@ -97,12 +97,12 @@ public class Main2Activity extends AppCompatActivity {
                                 // the auth state listener will be notified and logic to handle the
                                 // signed in user can be handled in the listener.
                                 if (!task.isSuccessful()) {
-                                    Toast.makeText(Main2Activity.this, "Authentication failed." + task.getException(),
+                                    Toast.makeText(Main2Activity.this, "Sign up error" + task.getException(),
                                             Toast.LENGTH_SHORT).show();
                                 } else {
                                     String userId = auth.getCurrentUser().getUid();
-                                    DatabaseReference currentUserDB = FirebaseDatabase.getInstance().getReference().child("Users").child(radioButton.getText().toString()).child(userId).child("name");
-                                    currentUserDB.setValue(name);
+                                    DatabaseReference currentUserDb = FirebaseDatabase.getInstance().getReference().child("Users").child(radioButton.getText().toString()).child(userId).child("name");
+                                    currentUserDb.setValue(name);
                                 }
                             }
                         });
